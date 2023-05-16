@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  width: 100%;
+  position: relative;
+}
+
+.wrapper-container{ height: 100%; }
+.main-container{
+  /* remove later */
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sections{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+background-color: rgba(255, 192, 203, 0.232);
+border-radius: 30px;
+width: 90%;
+gap: 10%;
+padding: 50px 0;
+box-shadow: 0px 10px 30px -11px rgba(0, 0, 0, 0.097);
+}
+
+.sections img{
+  height: auto;
+  width: 500px;
+  border-radius: 250px 250px 40px 40px;
+  box-shadow: 0px 10px 30px -11px rgba(0, 0, 0, 0.6);
+}
+
+.sections hr{
+  border: 0;
+  height: 3px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(180, 180, 180, 0.75), rgba(255, 255, 255, 0));
+  width: 80%;
+  margin: 40px;
+}
+.room-container{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.room-text{
+  font-size: 3em;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: rgb(69, 70, 75);
+  text-align: center;
+}
+
+.devices-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px;
+}
+
+.device-prop{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 170px;
+  height: 170px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 10px;
+}
+
+.control-center{
+  background: linear-gradient(315deg, rgb(241, 115, 128) 57%, rgb(221, 100, 112) 80%);
+  box-shadow: 0px 10px 30px -11px rgba(209, 60, 75, 0.708);
+  border-radius: 20px;
+  color: rgb(250, 220, 223);
+}
+.control-center i{ font-size: 1.5em; }
+.control-center:hover{ background: linear-gradient(315deg, rgb(241, 115, 128) 57%, rgb(208, 90, 101) 90%); }
+
+.device{
+  background: rgb(255,255,255);
+  background: linear-gradient(315deg, rgba(255,255,255,1) 57%, rgba(238,238,238,1) 80%);
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px -11px rgba(0, 0, 0, 0.6);
+}
+.device:hover{ background: linear-gradient(315deg, rgba(255,255,255,1) 57%, rgb(232, 232, 232) 90%); }
+.device i{
+  color: rgb(209, 209, 209);
+  font-size: 1.5em;
+}
+.device span{ color: rgb(69, 70, 75); }
+.toggle-label{
+  position: relative;
+  width: 80px;
+  height: 35px;
+  display: block;
+}
+.toggle-label input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-button{
+  position: absolute;
+  cursor: pointer;
+  background: #eeeeee;
+  transition: background 0.8s linear;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 33px;
+  border: 1px inset rgba(0, 0, 0, 0.25);
+}
+.toggle-button::before{
+  position: absolute;
+  content: "";
+  left: 4px;
+  bottom: 3px;
+  background: linear-gradient(315deg, rgba(255,255,255,1) 57%, rgba(238,238,238,1) 80%);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  transition: transform 1.3s linear, border-color 2s linear;
+}
+.toggle-button:hover::before{
+  border-color:  rgba(0, 0, 0, 0.5);
+  background: linear-gradient(315deg, rgba(255,255,255,1) 57%, rgb(223, 223, 223) 80%);
+}
+
+input:checked + .toggle-button { background: #166e38; }
+input:checked + .toggle-button::before { transform: translateX(43px); }
+
+@media only screen and (max-width: 600px) {
+  .sections img{
+    height: auto;
+    width: 250px;
+  }
+  .sections{ padding: 10px !important;  }
+  .device-prop{  
+    gap: 4px;
+    width: 120px;
+    height: 120px;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .sections{
+    flex-direction: column;
+    gap: 80px;
+    padding: 25px 30px;
+  }
+  .room-container{ width: 80%; }
+  .devices-wrapper{ gap: 10px; }
+  .toggle-button::before{
+    bottom: 4px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .sections{
+    justify-content: center;
+    padding: 50px;
+    padding: 25px 40px;
+    }
+    .sections img{ max-width: 350px; }
+    .devices-wrapper{ gap: 20px; }
+    .room-container{ width: 100%; }
+}
