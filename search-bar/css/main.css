@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.wrapper-container{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    width: 340px;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    background-color: #282828;
+    border-radius: 60px;
+    padding: 0 10px;
+}
+
+.icon{
+    color: #ddd;
+}
+.search-container input{
+    height: 40px;
+    width: 260px;
+    color: #ddd;
+}
+
+.search-container input[type=text] {
+    padding: 6px;
+    border: none;
+    font-size: 1em;
+    background: none;
+    font-family: "VT323", "non-serif";
+}
+.search-container input[type=text]:focus {
+    outline: none;
+    box-shadow: 0 0 3px #ddd;
+    border-radius: 40px;
+    padding: 0 10px;
+}
+
+.search-container button {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background: none;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+  }
+  
